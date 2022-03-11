@@ -119,8 +119,8 @@ function mostrarTotal(total) {
 
     postre.sumarIva();
 
-    let totalAbonar = (comida.precio + bebida.precio + postre.precio);
-
+    let totalAbonar = (comida.precio + bebida.precio + postre.precio).toFixed(2);
+    
     contenedor3.innerHTML =`<br>
                             <p>TOTAL:  ${totalAbonar} (IVA INCLUIDO)</p>           
                             <br>`
