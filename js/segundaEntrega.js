@@ -192,8 +192,7 @@ function mostrarMenu() {
 
         contenedor.innerHTML = `<div class="card">
                                 <h3>${producto.id}) ${producto.nombre} $${producto.precio}</h3>
-                                <img src=${producto.img} class="imagen"/>
-                                <button class="boton">Ordenar</button>`;
+                                <img src=${producto.img} class="imagen"/>`;
 
         menuCatalogo.appendChild(contenedor);
     }

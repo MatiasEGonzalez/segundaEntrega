@@ -1,11 +1,23 @@
 @media screen and (max-width: 1500px) {
   body {
-    position: absolute;
+    position: relative;
     background-color: black;
   }
   header {
     background: black;
     height: 150px;
+  }
+  .botones {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  button {
+    padding: 5px;
+    margin: 10px;
   }
   .letras {
     color: lightyellow;
@@ -15,6 +27,11 @@
   input {
     text-align: center;
     font-weight: bolder;
+    font-size: 1.5em;
+    max-width: 300px;
+  }
+  .ingresos {
+    color: rgba(231, 242, 253, 0.829);
     font-size: 1em;
   }
   .cuadroTexto {
@@ -28,8 +45,8 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 38%;
+    margin-right: 38%;
   }
   .carrito {
     color: lightyellow;
@@ -43,6 +60,8 @@
         -ms-flex-positive: 1;
             flex-grow: 1;
     margin: 20px;
+    height: 350px;
+    width: 350px;
     max-width: 300px;
     border: 2px solid #333;
     padding: 10px 20px 10px 20px;

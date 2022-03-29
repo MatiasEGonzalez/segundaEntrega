@@ -1,7 +1,7 @@
 
 @media screen and (max-width: 1500px){
 body{
-    position: absolute;
+    position: relative;
     background-color: black;
     
 }
@@ -10,6 +10,14 @@ header{
     background: black;
     height: 150px;
     
+}
+.botones{
+    display: flex;
+    justify-content: center;
+}
+button{
+    padding: 5px;
+    margin: 10px;
 }
 
 
@@ -22,16 +30,21 @@ header{
 input{
     text-align: center;
     font-weight: bolder;
-    font-size: 1em ;
+    font-size: 1.5em ;
+    max-width: 300px;
 }
 
+.ingresos{
+    color: rgba(231, 242, 253, 0.829);
+    font-size: 1em;
+}
 
 .cuadroTexto{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 38%;
+    margin-right: 38%;
     
 }
 
@@ -49,6 +62,8 @@ input{
 .card{
     flex-grow: 1;
     margin: 20px;
+    height: 350px;
+    width: 350px;
     max-width: 300px;
     border: 2px solid #333;
     padding: 10px 20px 10px 20px;
