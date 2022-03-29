@@ -34,13 +34,18 @@ function mostrarEnLista(pedidos) {
 
     let ul = document.getElementById("ul")
     contenedor2 = document.createElement("div")
-    contenedor2.innerHTML = `
+    contenedor2.innerHTML = `        
+        <br>   
+        
         <br>
-        <li>Comida y Bebida: ${pedidos.comida} con ${pedidos.bebida}</li>
-        <li>Postre: ${pedidos.postre}</li>
-        <img src=${comida.img} class="imagen"/>
-        <img src=${bebida.img} class="imagen"/>
-        <img src=${postre.img} class="imagen"/>        
+        <div>
+            <h4 class="carrito">CARRITO</h4>  
+            <p class="letras">Comida y Bebida: ${pedidos.comida} con ${pedidos.bebida}</p>
+            <p class="letras">Postre: ${pedidos.postre}</p>
+            <img src=${comida.img} class="imagen"/>
+            <img src=${bebida.img} class="imagen"/>
+            <img src=${postre.img} class="imagen"/>        
+        </div> 
         <br>`
 
     ul.appendChild(contenedor2);
@@ -70,8 +75,11 @@ listaProductos.push(new Lista(16, "sprite", 170, categorias[3], "./img/sprite.jp
 
 localStorage.setItem("listaProductosAlmacenados", JSON.stringify(listaProductos));
 
-let limpiar = document.querySelector('.Limpiar');
-limpiar.onclick = () => {
+let limpiarOrden = document.querySelector('.limpiar');
+limpiarOrden.addEventListener('click', limpiar);
+
+
+function limpiar(){
     limpiarOrden = true;
         if(limpiarOrden){
         document.getElementById("ordenComida").value = "";
@@ -81,8 +89,6 @@ limpiar.onclick = () => {
         contenedor3.innerHTML = "";
     }
 }
-
-
 
 
 function encontrarOrden() {
@@ -107,6 +113,8 @@ function encontrarOrden() {
       
 }
 
+
+
 function mostrarTotal(total) {
 
     let mostrarTotal = document.getElementById("mostrarTotal");
@@ -122,26 +130,35 @@ function mostrarTotal(total) {
     let totalAbonar = (comida.precio + bebida.precio + postre.precio).toFixed(2);
     
     contenedor3.innerHTML =`<br>
-                            <p>TOTAL:  ${totalAbonar} (IVA INCLUIDO)</p>           
+                            <p class="letras">TOTAL:  ${totalAbonar} (IVA INCLUIDO)</p>           
                             <br>`
 
     ul.appendChild(contenedor3);
 
 }
 
+function confirmarPedido(){
+    Swal.fire({
+        icon: 'success',
+        title: 'Tu pedido ha sido agregado al carrito',
+        showConfirmButton: false,
+        timer: 1600
+      })
+}
+
 let menuCatalogo = document.querySelector('.menuCatalogo');
 
-let renderMenu = document.querySelector('.mostrarMenu');
+let renderOrden = document.querySelector('.mostrarOrden');
 
-renderMenu.addEventListener('click', mostrarMenu);
+renderOrden.addEventListener('click', mostrarOrden);
 
-let mostrarOrden = document.querySelector('.mostrarOrden');
-
-mostrarOrden.onclick = () => {
+function mostrarOrden(){
     
-    confirmar = true;
 
+    confirmar = true;
+    confirmarPedido();
     if (confirmar) {
+        
         ordenComida = document.getElementById("ordenComida").value;
         ordenBebida = document.getElementById("ordenBebida").value;
         ordenPostre = document.getElementById("ordenPostre").value;
@@ -150,6 +167,8 @@ mostrarOrden.onclick = () => {
 
         listaOrdenes.push(pedidos);
         localStorage.setItem("listaPedidos", JSON.stringify(listaOrdenes));
+
+        
         encontrarOrden();
 
         mostrarEnLista(pedidos);
@@ -160,6 +179,12 @@ mostrarOrden.onclick = () => {
     console.log(listaOrdenes);
 }
 
+
+
+let renderMenu = document.querySelector('.mostrarMenu');
+
+renderMenu.addEventListener('click', mostrarMenu);
+
 function mostrarMenu() {
     menuCatalogo.innerHTML = '';
     for (const producto of listaProductos) {
@@ -167,7 +192,8 @@ function mostrarMenu() {
 
         contenedor.innerHTML = `<div class="card">
                                 <h3>${producto.id}) ${producto.nombre} $${producto.precio}</h3>
-                                <img src=${producto.img} class="imagen"/>`;
+                                <img src=${producto.img} class="imagen"/>
+                                <button class="boton">Ordenar</button>`;
 
         menuCatalogo.appendChild(contenedor);
     }
