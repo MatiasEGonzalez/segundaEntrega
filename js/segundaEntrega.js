@@ -2,29 +2,6 @@ const categorias = ["DESAYUNO Y MERIENDA ", "ALMUERZO Y CENA ", "POSTRES ", "BEB
 
 console.log("Tenemos " + categorias.length + " Categorias en el menú\n" + categorias);
 
-class Lista {
-    constructor(id, nombre, precio, category, imgValor) {
-        this.id = parseInt(id);
-        this.nombre = nombre;
-        this.precio = parseFloat(precio);
-        this.category = category;
-        this.img = imgValor;
-    }
-
-    sumarIva() {
-        this.precio = this.precio * 1.21;
-    }
-}
-
-class Pedido {
-    constructor(comida, bebida, postre) {
-        this.comida = comida;
-        this.bebida = bebida;
-        this.postre = postre;
-
-    }
-}
-
 let contador = 0;
 let contenedor2;
 let contenedor3;
@@ -32,11 +9,9 @@ const listaOrdenes = [];
 
 function mostrarEnLista(pedidos) {
 
-    let ul = document.getElementById("ul")
-    contenedor2 = document.createElement("div")
+    let ul = document.getElementById("ul");
+    contenedor2 = document.createElement("div");
     contenedor2.innerHTML = `        
-        <br>   
-        
         <br>
         <div>
             <h4 class="carrito">CARRITO</h4>  
@@ -80,7 +55,6 @@ localStorage.setItem("listaProductosAlmacenados", JSON.stringify(listaProductos)
 let limpiarOrden = document.querySelector('.limpiar');
 limpiarOrden.addEventListener('click', limpiar);
 
-
 function limpiar(){
     limpiarOrden = true;
         if(limpiarOrden){
@@ -91,7 +65,6 @@ function limpiar(){
         contenedor3.innerHTML = "";
     }
 }
-
 
 function encontrarOrden() {
 
@@ -104,18 +77,16 @@ function encontrarOrden() {
     console.log(comida, bebida, postre);
 
     if(comida == undefined){
-        console.log("Disculpe, no tenemos ese menu")
+        console.log("Disculpe, no tenemos ese menu");
     }
     else if(bebida == undefined){
-        console.log("Disculpe, no tenemos esa bebida")
+        console.log("Disculpe, no tenemos esa bebida");
     }
     else if(postre == undefined){
-        console.log("Disculpe, no tenemos ese postre")
+        console.log("Disculpe, no tenemos ese postre");
     }
       
 }
-
-
 
 function mostrarTotal(total) {
 
@@ -133,7 +104,7 @@ function mostrarTotal(total) {
     
     contenedor3.innerHTML =`<br>
                             <p class="letras">TOTAL:  ${totalAbonar} (IVA INCLUIDO)</p>           
-                            <br>`
+                            <br>`;
 
     ul.appendChild(contenedor3);
 
@@ -155,8 +126,6 @@ let renderOrden = document.querySelector('.mostrarOrden');
 renderOrden.addEventListener('click', mostrarOrden);
 
 function mostrarOrden(){
-    
-
     confirmar = true;
     confirmarPedido();
     if (confirmar) {
@@ -180,8 +149,6 @@ function mostrarOrden(){
 
     console.log(listaOrdenes);
 }
-
-
 
 let renderMenu = document.querySelector('.mostrarMenu');
 
