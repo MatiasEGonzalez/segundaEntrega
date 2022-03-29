@@ -42,9 +42,11 @@ function mostrarEnLista(pedidos) {
             <h4 class="carrito">CARRITO</h4>  
             <p class="letras">Comida y Bebida: ${pedidos.comida} con ${pedidos.bebida}</p>
             <p class="letras">Postre: ${pedidos.postre}</p>
-            <img src=${comida.img} class="imagen"/>
-            <img src=${bebida.img} class="imagen"/>
-            <img src=${postre.img} class="imagen"/>        
+            <div class="imagen">
+                <img src=${comida.img} />
+                <img src=${bebida.img} />
+                <img src=${postre.img} />  
+            </div>      
         </div> 
         <br>`
 
