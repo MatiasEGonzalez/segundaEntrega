@@ -29,28 +29,33 @@ function mostrarEnLista(pedidos) {
 }
 
 let listaProductosMenu = "Estos son nuestros productos";
+/*
+const objeto1= new Lista(1, "Pizza", 600, categorias[1], "./img/pizza.jpg");
+const objeto2= new Lista(2, "Milanesa con pure", 550, categorias[1], "./img/milanesaConPure.jpg");
+const objeto3= new Lista(3, "Milanesa con ensalada", 550, categorias[1], "./img/milanesaConEnsalada.jpg");
+const objeto4= new Lista(4, "Milanesa con papas fritas", 550, categorias[1], "./img/milanesasConPapasFritas.jpg");
+const objeto5= new Lista(5, "Asado con pure", 550, categorias[1], "./img/asadoConPure.jpg");
+const objeto6= new Lista(6, "Asado con ensalada", 550, categorias[1], "./img/asadoConEnsalada.jpg");
+const objeto7= new Lista(7, "Sopa de verduras", 550, categorias[1], "./img/sopa.jpg");
+const objeto8= new Lista(8, "Pastafrola", 150, categorias[0], "./img/pastafrola.jpg");
+const objeto9= new Lista(9, "Cafe con leche", 220, categorias[0], "./img/cafeConLeche.jpg");
+const objeto10= new Lista(10, "Flan", 170, categorias[2], "./img/flan.jpg");
+const objeto11= new Lista(11, "Helado", 240, categorias[2], "./img/helado.jpg");
+const objeto12= new Lista(12, "Fernet con coca", 450, categorias[3], "./img/fernetConCoca.jpg");
+const objeto13= new Lista(13, "Cerveza pinta", 220, categorias[3], "./img/cervezaPinta.jpg");
+const objeto14= new Lista(14, "Cerveza botella", 340, categorias[3], "./img/cervezaBotella.jpg");
+const objeto15= new Lista(15, "Coca cola", 170, categorias[3], "./img/cocaCola.jpg");
+const objeto16= new Lista(16, "Sprite", 170, categorias[3], "./img/sprite.jpg");
+const listaProductos = [objeto1,objeto2,objeto3,objeto4,objeto5,objeto6,objeto7,objeto8,objeto9,objeto10,objeto11,objeto12,objeto13,objeto14,objeto15,objeto16];
+*/
+let listaProductosB = []
 
-const listaProductos = [];
-
-listaProductos.push(new Lista(1, "pizza", 600, categorias[1], "./img/pizza.jpg"));
-listaProductos.push(new Lista(2, "milanesa con pure", 550, categorias[1], "./img/milanesaConPure.jpg"));
-listaProductos.push(new Lista(3, "milanesa con ensalada", 550, categorias[1], "./img/milanesaConEnsalada.jpg"));
-listaProductos.push(new Lista(4, "milanesa con papas fritas", 550, categorias[1], "./img/milanesasConPapasFritas.jpg"));
-listaProductos.push(new Lista(5, "asado con pure", 550, categorias[1], "./img/asadoConPure.jpg"));
-listaProductos.push(new Lista(6, "asado con ensalada", 550, categorias[1], "./img/asadoConEnsalada.jpg"));
-listaProductos.push(new Lista(7, "sopa de verduras", 550, categorias[1], "./img/sopa.jpg"));
-listaProductos.push(new Lista(8, "pastafrola", 150, categorias[0], "./img/pastafrola.jpg"));
-listaProductos.push(new Lista(9, "cafe con leche", 220, categorias[0], "./img/cafeConLeche.jpg"));
-listaProductos.push(new Lista(10, "flan", 170, categorias[2], "./img/flan.jpg"));
-listaProductos.push(new Lista(11, "helado", 240, categorias[2], "./img/helado.jpg"));
-listaProductos.push(new Lista(12, "fernet con coca", 450, categorias[3], "./img/fernetConCoca.jpg"));
-listaProductos.push(new Lista(13, "cerveza pinta", 220, categorias[3], "./img/cervezaPinta.jpg"));
-listaProductos.push(new Lista(14, "cerveza botella", 340, categorias[3], "./img/cervezaBotella.jpg"));
-listaProductos.push(new Lista(15, "coca cola", 170, categorias[3], "./img/cocaCola.jpg"));
-listaProductos.push(new Lista(16, "sprite", 170, categorias[3], "./img/sprite.jpg"));
+fetch('data.json')
+.then((resp) => resp.json())
+.then((data) => listaProductosB = data)
 
 
-localStorage.setItem("listaProductosAlmacenados", JSON.stringify(listaProductos));
+localStorage.setItem("listaProductosAlmacenados", JSON.stringify(listaProductosB));
 
 let limpiarOrden = document.querySelector('.limpiar');
 limpiarOrden.addEventListener('click', limpiar);
@@ -68,11 +73,11 @@ function limpiar(){
 
 function encontrarOrden() {
 
-    comida = listaProductos.find(producto => producto.nombre == ordenComida.toLowerCase());
+    comida = listaProductosB.find(producto => producto.nombre == ordenComida.toLowerCase());
 
-    bebida = listaProductos.find(producto => producto.nombre == ordenBebida.toLowerCase());
+    bebida = listaProductosB.find(producto => producto.nombre == ordenBebida.toLowerCase());
 
-    postre = listaProductos.find(producto => producto.nombre == ordenPostre.toLowerCase());
+    postre = listaProductosB.find(producto => producto.nombre == ordenPostre.toLowerCase());
 
     console.log(comida, bebida, postre);
 
@@ -156,7 +161,7 @@ renderMenu.addEventListener('click', mostrarMenu);
 
 function mostrarMenu() {
     menuCatalogo.innerHTML = '';
-    for (const producto of listaProductos) {
+    for (const producto of listaProductosB) {
         let contenedor = document.createElement("div");
 
         contenedor.innerHTML = `<div class="card">

@@ -1,0 +1,114 @@
+[
+    {  
+        "id": 1,
+        "nombre": "pizza",
+        "precio": 600,
+        "category": "categorias[1]",
+        "img": "./img/pizza.jpg"
+    },
+    {  
+        "id": 2,
+        "nombre": "milanesa con pure",
+        "precio": 550,
+        "category": "categorias[1]",
+        "img": "./img/milanesaConPure.jpg"
+    },
+    {  
+        "id": 3,
+        "nombre": "milanesa con ensalada",
+        "precio": 550,
+        "category": "categorias[1]",
+        "img": "./img/milanesaConEnsalada.jpg"
+    },
+    {  
+        "id": 4,
+        "nombre": "milanesa con papas fritas",
+        "precio": 550,
+        "category": "categorias[1]",
+        "img": "./img/milanesasConPapasFritas.jpg"
+    },
+    {  
+        "id": 5,
+        "nombre": "asado con pure",
+        "precio": 550,
+        "category": "categorias[1]",
+        "img": "./img/asadoConPure.jpg"
+    },
+    {  
+        "id": 6,
+        "nombre": "asado con ensalada",
+        "precio": 550,
+        "category": "categorias[1]",
+        "img": "./img/asadoConEnsalada.jpg"
+    },
+    {  
+        "id": 7,
+        "nombre": "sopa de verduras",
+        "precio": 550,
+        "category": "categorias[1]",
+        "img": "./img/sopa.jpg"
+    },
+    {  
+        "id": 8,
+        "nombre": "pastafrola",
+        "precio": 150,
+        "category": "categorias[0]",
+        "img": "./img/pastafrola.jpg"
+    },
+    {  
+        "id": 9,
+        "nombre": "cafe con leche",
+        "precio": 220,
+        "category": "categorias[0]",
+        "img": "./img/cafeConLeche.jpg"
+    },
+    {  
+        "id": 10,
+        "nombre": "flan",
+        "precio": 170,
+        "category": "categorias[2]",
+        "img": "./img/flan.jpg"
+    },
+    {  
+        "id": 11,
+        "nombre": "helado",
+        "precio": 240,
+        "category": "categorias[2]",
+        "img": "./img/helado.jpg"
+    },
+    {  
+        "id": 12,
+        "nombre": "fernet con coca",
+        "precio": 450,
+        "category": "categorias[3]",
+        "img": "./img/fernetConCoca.jpg"
+    },
+    {  
+        "id": 13,
+        "nombre": "cerveza pinta",
+        "precio": 220,
+        "category": "categorias[3]",
+        "img": "./img/cervezaPinta.jpg"
+    },
+    {  
+        "id": 14,
+        "nombre": "cerveza botella",
+        "precio": 340,
+        "category": "categorias[3]",
+        "img": "./img/cervezaBotella.jpg"
+    },
+    {  
+        "id": 15,
+        "nombre": "coca cola",
+        "precio": 170,
+        "category": "categorias[3]",
+        "img": "./img/cocaCola.jpg"
+    },
+    {  
+        "id": 16,
+        "nombre": "sprite",
+        "precio": 170,
+        "category": "categorias[3]",
+        "img": "./img/sprite.jpg"
+    }
+]
