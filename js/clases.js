@@ -10,6 +10,7 @@ class Lista {
     sumarIva() {
         this.precio = this.precio * 1.21;
     }
+
 }
 
 class Pedido {
@@ -18,5 +19,14 @@ class Pedido {
         this.bebida = bebida;
         this.postre = postre;
 
+    }
+}
+
+class Reservas {
+    constructor(nombre, apellido, dia, hora, reserva) {
+        this.reserva = id;
+        this.nombre = nombre
+        this.apellido = apellido
+        this.fecha = fecha
     }
 }

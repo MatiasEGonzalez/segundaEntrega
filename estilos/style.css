@@ -1,53 +1,80 @@
 @media screen and (max-width: 1500px) {
   body {
     position: relative;
-    background-color: black;
+    background-image: url(/img/fondo2.jpg);
   }
+
   header {
-    background: black;
+    background: rgba(3, 1, 10, 0.507);
     height: 150px;
+    justify-content: center;
   }
+
   .botones {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
-  button {
+
+  .boton {
     padding: 5px;
     margin: 10px;
+    color: #fff;
+    background: rgb(18, 214, 34);
   }
+
+  @-webkit-keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .pulse:hover {
+    -webkit-animation: 0.3s pulse 10;
+  }
+
+  .logoBeer {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+  }
+
   .letras {
     color: lightyellow;
     text-align: center;
     text-decoration: none;
   }
+
   input {
     text-align: center;
     font-weight: bolder;
     font-size: 1.5em;
     max-width: 300px;
   }
+
+  .round-corners {
+    border-radius: 1em;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .ingresos {
     color: rgba(231, 242, 253, 0.829);
     font-size: 1em;
   }
+
   .cuadroTexto {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    justify-content: center;
     margin-left: 38%;
     margin-right: 38%;
   }
+
   .carrito {
     color: lightyellow;
     text-align: center;
@@ -55,81 +82,71 @@
     font-size: 2em;
     text-decoration: underline;
   }
+
   .card {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
     margin: 20px;
     height: 350px;
     width: 350px;
     max-width: 300px;
-    border: 2px solid #333;
+    border: none;
     padding: 10px 20px 10px 20px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    background: lightyellow !important;
+    justify-content: center;
+    background: rgba(255, 255, 224, 0.295) !important;
     z-index: 99;
   }
+
   .card:hover {
-    border-color: red;
-    -webkit-box-shadow: 0px 0px 30px #5a0606;
-            box-shadow: 0px 0px 30px #5a0606;
+    border-color: rgb(59, 59, 59);
+    box-shadow: 0px 0px 20px rgb(22, 19, 19);
   }
+
   #items {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
+
   .ordenar {
     z-index: 99;
   }
+
   .imagen {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
+
   img {
     width: 250px;
     height: 200px;
   }
+
   .menuCatalogo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
-
 /*
 @media screen and (max-width: 600px){
 
     body{
         position: absolute;
         background-color: #212529;
-        
+
     }
-    
+
     header{
         background: black;
         height: 200px;
     }
-    
+
     #carritofijo{
         position: absolute;
         margin-top: 4100px; 
         background-color: #212529;
-    
+
     }
-    
-    
+
+
     .letras{
         color: lightyellow;
         text-align: center;
@@ -138,7 +155,7 @@
     .cell{
         color:black;
     }
-    
+
     .card{
         flex-grow: 1;
         margin: 20px;
@@ -148,39 +165,39 @@
         justify-content: center;
         background: lightyellow !important; 
         z-index: 99;
-        
+
     }
     .card:hover{
         border-color: red;
         box-shadow: 0px 0px 30px rgb(90, 6, 6);
-       
-        
+
+
     }
-    
+
     #items{
         justify-content: center;
     }
-    
+
     .ordenar{
         z-index: 99;
-        
-        
+
+
     }
-    
-    
+
+
     img{
         width: 250px;
         height: 200px;
-        
+
     }
-    
+
     .menuCatalogo{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        
+
     }
-    
+
 
 }
 
@@ -189,22 +206,22 @@
     body{
         position: absolute;
         background-color: #212529;
-        
+
     }
-    
+
     header{
         background: black;
         height: 200px;
     }
-    
+
     #carritofijo{
         position: absolute;
         margin-top: 6550px; 
         background-color: #212529;
-    
+
     }
-    
-    
+
+
     .letras{
         color: lightyellow;
         text-align: center;
@@ -213,7 +230,7 @@
     .cell{
         color:black;
     }
-    
+
     .card{
         flex-grow: 1;
         margin: 20px;
@@ -223,39 +240,39 @@
         justify-content: center;
         background: lightyellow !important; 
         z-index: 99;
-        
+
     }
     .card:hover{
         border-color: red;
         box-shadow: 0px 0px 30px rgb(90, 6, 6);
-       
-        
+
+
     }
-    
+
     #items{
         justify-content: center;
     }
-    
+
     .ordenar{
         z-index: 99;
-        
-        
+
+
     }
-    
-    
+
+
     img{
         width: 250px;
         height: 200px;
-        
+
     }
-    
+
     .menuCatalogo{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        
+
     }
-    
+
 
 }
 */

@@ -11,28 +11,32 @@
 </head>
 <body>
     <header>
-        <h1 class="letras">Bienvenidos al Bar AcaCcomeRico</h1>
-        <h2 class="letras">Bar&growler</h2>
-        <h3 class="letras">Menu</h3>
+        <div class="pulse">
+            <h1 class="letras">Bienvenidos al Bar AcaCcomeRico</h1>
+            <h2 class="letras"><img class="logoBeer" src="./img/beer.png" alt="logo"> Bar&growler<img class="logoBeer"  src="./img/beer.png" alt="logo"></h2>
+            
+        </div>
     </header>
+    <button class="mostrarReserva">IR A RESERVAS</button>
+    <div class="reservasMesas">RESERVAS</div>
 
     <div class="menuCatalogo"></div>
 
     <div class="botones">
-        <button class="mostrarMenu">Ver Menú</button>
-        <button class="mostrarOrden">Mostrar Orden</button>
-        <button class="limpiar">Limpiar Orden</button>
+        <button class="mostrarMenu boton round-corners">Ver Menú</button>
+        <button class="mostrarOrden boton round-corners">Mostrar Orden</button>
+        <button class="limpiar boton round-corners">Limpiar Orden</button>
     </div>
 
     <div class="cuadroTexto">
         <h3 class="ingresos">Ingrese que comida desea</h3>
-        <input  id = "ordenComida" type="text">
+        <input class="round-corners" id = "ordenComida" type="text">
 
         <h3 class="ingresos">Ingrese que bebida desea</h3>
-        <input  id = "ordenBebida" type="text">
+        <input class="round-corners" id = "ordenBebida" type="text">
 
         <h3 class="ingresos">Ingrese que postre desea</h3>
-        <input  id = "ordenPostre" type="text">
+        <input class="round-corners" id = "ordenPostre" type="text">
     </div>  
     <div>        
         <ul id="ul"></ul>

@@ -5,7 +5,9 @@ console.log("Tenemos " + categorias.length + " Categorias en el menú\n" + categ
 let contador = 0;
 let contenedor2;
 let contenedor3;
+
 const listaOrdenes = [];
+const listaReservas = [];
 
 function mostrarEnLista(pedidos) {
 
@@ -52,15 +54,16 @@ let listaProductosB = []
 
 fetch('data.json')
 .then((resp) => resp.json())
-.then((data) => listaProductosB = data)
+.then((data) => data.forEach((producto) => 
+                                listaProductosB.push(new Lista(producto.id, producto.nombre, producto.precio, producto.category, producto.img))))
 
-
+console.log(listaProductosB)
 localStorage.setItem("listaProductosAlmacenados", JSON.stringify(listaProductosB));
 
 let limpiarOrden = document.querySelector('.limpiar');
 limpiarOrden.addEventListener('click', limpiar);
 
-function limpiar(){
+function limpiar(limpiarOrden){
     limpiarOrden = true;
         if(limpiarOrden){
         document.getElementById("ordenComida").value = "";
@@ -124,6 +127,8 @@ function confirmarPedido(){
       })
 }
 
+
+
 let menuCatalogo = document.querySelector('.menuCatalogo');
 
 let renderOrden = document.querySelector('.mostrarOrden');
@@ -170,4 +175,37 @@ function mostrarMenu() {
 
         menuCatalogo.appendChild(contenedor);
     }
+}
+
+
+let reservasMesas = document.querySelector('.reservasMesas');
+
+
+let renderReserva = document.querySelector('.mostrarReserva');
+
+renderReserva.addEventListener('click', mostrarReserva);
+
+function mostrarReserva() {
+    reservasMesas.innerHTML = '';
+    
+        let contenedor5 = document.createElement("div");
+
+        contenedor5.innerHTML = `<div class="reservasMesas">
+                                <div class="reservasMesas">
+                                <h3 class="ingresos">Ingrese su Nombre y Apellido</h3>
+                                <input class="round-corners" id = "NombreApellido" type="text">
+
+                                <h3 class="ingresos">Reserva para cuantas personas</h3>
+                                <input class="round-corners" id = "NroPersonas" type="text">
+
+                                <h3 class="ingresos">Fecha de reserva</h3>
+                                <input class="round-corners" id = "fecha" type="text" placeholder="xx/xx/xxxx">
+                                </div> 
+                            
+                                
+                                </div>`;
+
+        reservasMesas.appendChild(contenedor5);
+    
+    console.log(listaReservas)
 }
