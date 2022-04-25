@@ -227,6 +227,15 @@ function reservar() {
     console.log(listaReservas)
 }
 
+function confirmarReserva(){
+    Swal.fire({
+        icon: 'success',
+        title: 'Su reserva ha sido generada con Exito',
+        showConfirmButton: false,
+        timer: 1600
+      })
+}
+
 let mostrarReserva = document.querySelector('.verReserva');
 
 mostrarReserva.addEventListener('click', verReserva);
@@ -243,6 +252,7 @@ function verReserva(){
     listaReservas.push(reservasMesas);
     localStorage.setItem("reservasMesas", JSON.stringify(listaReservas));
 
+    confirmarReserva()
     
 }
 
