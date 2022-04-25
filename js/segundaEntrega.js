@@ -5,6 +5,11 @@ console.log("Tenemos " + categorias.length + " Categorias en el menú\n" + categ
 let contador = 0;
 let contenedor2;
 let contenedor3;
+let contenedor4;
+
+let fecha;
+let nombreApellido;
+let nroPersonas;
 
 const listaOrdenes = [];
 const listaReservas = [];
@@ -58,7 +63,7 @@ fetch('data.json')
                                 listaProductosB.push(new Lista(producto.id, producto.nombre, producto.precio, producto.category, producto.img))))
 
 console.log(listaProductosB)
-localStorage.setItem("listaProductosAlmacenados", JSON.stringify(listaProductosB));
+
 
 let limpiarOrden = document.querySelector('.limpiar');
 limpiarOrden.addEventListener('click', limpiar);
@@ -177,35 +182,68 @@ function mostrarMenu() {
     }
 }
 
+let borrarReserva = document.querySelector('.limpiarReserva');
+borrarReserva.addEventListener('click', limpiarReserva);
+
+function limpiarReserva(limpiarReserva){
+    limpiarReserva = true;
+        if(limpiarReserva){
+        document.getElementById("fecha").value = "";
+        document.getElementById("nombreApellido").value = "";
+        document.getElementById("nroPersonas").value = "";
+        reservasMesas.innerHTML = "";
+        
+    }
+}
+
 
 let reservasMesas = document.querySelector('.reservasMesas');
 
 
-let renderReserva = document.querySelector('.mostrarReserva');
+let renderReserva = document.querySelector('.reservar');
 
-renderReserva.addEventListener('click', mostrarReserva);
+renderReserva.addEventListener('click', reservar);
 
-function mostrarReserva() {
+function reservar() {
     reservasMesas.innerHTML = '';
     
-        let contenedor5 = document.createElement("div");
+        let contenedor4 = document.createElement("div");
 
-        contenedor5.innerHTML = `<div class="reservasMesas">
-                                <div class="reservasMesas">
+        contenedor4.innerHTML = `<div class="reservasMesas">
+                                
+                                <h3 class="ingresos">Fecha de reserva</h3>
+                                <input class="round-corners" id = "fecha" type="text" placeholder="dia/mes">
+
                                 <h3 class="ingresos">Ingrese su Nombre y Apellido</h3>
-                                <input class="round-corners" id = "NombreApellido" type="text">
+                                <input class="round-corners" id = "nombreApellido" type="text">
 
                                 <h3 class="ingresos">Reserva para cuantas personas</h3>
-                                <input class="round-corners" id = "NroPersonas" type="text">
-
-                                <h3 class="ingresos">Fecha de reserva</h3>
-                                <input class="round-corners" id = "fecha" type="text" placeholder="xx/xx/xxxx">
-                                </div> 
-                            
-                                
+                                <input class="round-corners" id = "nroPersonas" type="text">
+                    
                                 </div>`;
 
-        reservasMesas.appendChild(contenedor5);
-    
+        reservasMesas.appendChild(contenedor4);
+        
     console.log(listaReservas)
 }
+
+let mostrarReserva = document.querySelector('.verReserva');
+
+mostrarReserva.addEventListener('click', verReserva);
+
+function verReserva(){
+   
+
+    fecha = document.getElementById("fecha").value;
+    nombreApellido = document.getElementById("nombreApellido").value;
+    nroPersonas = document.getElementById("nroPersonas").value;
+    
+    const reservasMesas = new Reservas (fecha, nombreApellido, nroPersonas);
+
+    listaReservas.push(reservasMesas);
+    localStorage.setItem("reservasMesas", JSON.stringify(listaReservas));
+
+    
+}
+
+verReserva()  

@@ -23,10 +23,9 @@ class Pedido {
 }
 
 class Reservas {
-    constructor(nombre, apellido, dia, hora, reserva) {
-        this.reserva = id;
-        this.nombre = nombre
-        this.apellido = apellido
-        this.fecha = fecha
+    constructor(fecha, nombreApellido, nroPersonas) {
+        this.fecha = fecha;        
+        this.nombreApellido = nombreApellido;        
+        this.nroPersonas = nroPersonas;
     }
 }
